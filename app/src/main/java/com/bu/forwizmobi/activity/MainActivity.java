@@ -1,15 +1,17 @@
 package com.bu.forwizmobi.activity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bu.forwizmobi.R;
+import com.bu.forwizmobi.fragment.DashboardFragment;
 import com.bu.forwizmobi.fragment.TimeLineFragment;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +29,18 @@ public class MainActivity extends BaseActivity {
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         //        ft.addToBackStack(null);
         ft.commit();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.categories:
+                loadFragment(new TimeLineFragment());
+                break;
+            case R.id.home:
+                loadFragment(new DashboardFragment());
+                break;
+        }
     }
 }
