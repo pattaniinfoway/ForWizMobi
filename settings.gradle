@@ -1,0 +1,2 @@
+rootProject.name='ForWizMobi'
+include ':app'
