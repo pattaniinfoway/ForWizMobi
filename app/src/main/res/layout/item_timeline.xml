@@ -1,6 +1,16 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    >
+<LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,24 +21,35 @@
         android:id="@+id/timeline"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:markerSize="20dp"
+
         app:lineWidth="3dp"
-        app:startLineColor="@color/colorAccent"
-        app:endLineColor="@color/colorAccent"
+
+        app:marker="@drawable/rotate_marker_point"
+        app:markerSize="150dp"
+        app:startLineColor="#FDCA3F"
+        app:endLineColor="#FDCA3F"
         app:lineStyle="dash"/>
 
-    <com.google.android.material.card.MaterialCardView
+    <RelativeLayout
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginLeft="10dp"
+   
         android:layout_marginRight="5dp"
+        android:backgroundTint="@color/colorWhite"
         android:layout_gravity="center_vertical"
-        app:cardBackgroundColor="@color/colorAccent"
-        app:contentPadding="15dp">
-
+        >
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_bookmark"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"></ImageView>
         <LinearLayout
+            android:layout_toEndOf="@+id/icon"
+            android:layout_marginStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -39,19 +60,70 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_timeline_date"
-                android:textSize="12sp"
-                tools:text="24 JAN"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:id="@+id/text_timeline_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                tools:text="Order Successfully Completed"/>
+                android:text="Place Personal Order"
+                tools:text="Place Personal Order"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                >
+                
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/star"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_star"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/star"
+                        android:textSize="13sp"
+                        android:layout_marginStart="2dp"
+                        android:textStyle="bold"
+                        android:text="15 pts"
+                       />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></RelativeLayout>
+                <ImageView
+                    android:id="@+id/clock"
+                        android:layout_width="wrap_content"
+                    android:src="@drawable/ic_clock"
+                    android:layout_height="wrap_content"></ImageView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/clock"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="2dp"
+                    android:text="16 Nov"
+                    />
+                
+            </LinearLayout>
+
+
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
 
 </LinearLayout>
+</RelativeLayout>

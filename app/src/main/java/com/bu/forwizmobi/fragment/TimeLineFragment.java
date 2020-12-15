@@ -48,7 +48,7 @@ public class TimeLineFragment extends BaseFragment {
         mLayoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(5));
+        recyclerView.addItemDecoration(new VerticalSpaceItemDecoration(10));
 
         ExampleTimeLineAdapter prodcutAdapter = new ExampleTimeLineAdapter(mContext);
         recyclerView.setAdapter(prodcutAdapter);
